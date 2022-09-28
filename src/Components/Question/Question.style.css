@@ -1,0 +1,20 @@
+.question-card {
+    background: lightseagreen;
+    color: white;
+    padding: 10px;
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button.add-question-to-quiz {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: lightseagreen;
+}
