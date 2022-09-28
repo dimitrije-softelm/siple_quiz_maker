@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from '../../Components/Header/Header';
 
 
 const QuestionsPage = () => {
   return (
-    <div></div>
+    <div>
+      <Header />
+    </div>
   );
 }
 

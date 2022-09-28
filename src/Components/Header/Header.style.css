@@ -1,0 +1,19 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  background: lightseagreen;
+  color: white;
+}
+
+.links-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+}
+
+a {
+  color: white;
+}
