@@ -8,12 +8,12 @@ const QuestionComponent = (props) =>  {
     <div className={'question-card'}>
       <div>
         <h3>{question.question}</h3>
-        <ul>
-          <li>{question.correctAnswer}</li>
+        <ol>
+          <li className={'correct-answer'}>{question.correctAnswer}</li>
             {question.incorrectAnswers.map((value,index) => (
               <li key={index}>{value}</li>
             ))}
-        </ul>
+        </ol>
       </div>
       <button
         className={'add-question-to-quiz'}

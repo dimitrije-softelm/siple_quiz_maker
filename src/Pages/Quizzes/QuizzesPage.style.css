@@ -1,0 +1,48 @@
+div.quiz-page-container {
+    text-align: left;
+    padding: 50px;
+}
+
+button {
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+button.add-quiz, button.create-quiz {
+    color: white;
+    background: lightseagreen;
+}
+
+button:disabled {
+    background: lightgray;
+    color: darkgray;
+    cursor: not-allowed;
+}
+
+.add-quiz-form {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    width: 400px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+input {
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+}
+
+div.quizzes-list {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: 20px;
+}

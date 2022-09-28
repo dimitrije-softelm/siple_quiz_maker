@@ -1,0 +1,20 @@
+div.quiz-card {
+    border: 1px solid lightseagreen;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 550px;
+}
+
+div.question-in-quiz {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button.remove-question {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background: red;
+    color: white;
+}
