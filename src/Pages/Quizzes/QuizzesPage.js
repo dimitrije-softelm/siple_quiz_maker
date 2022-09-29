@@ -1,12 +1,18 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import Header from '../../Components/Header/Header';
 import './QuizzesPage.style.css';
 import QuizComponent from '../../Components/Quiz/Quiz.component';
+import {QUIZ_LOCAL_STORAGE_KEY} from '../../_shared/constants';
 
 const QuizzesPage = () => {
   const [quizzes, setQuizzes] = useState([]);
   const [addingQuiz, setAddingQuiz] = useState(false);
   const [newQuizName, setNewQuizName] = useState('');
+
+  useEffect(() => {
+    const savedQuizzes = JSON.parse(localStorage.getItem(QUIZ_LOCAL_STORAGE_KEY)) || [];
+    setQuizzes(savedQuizzes);
+  }, [])
 
   const onNeqQuizNameChange = (name) => {
     setNewQuizName(name);
@@ -26,11 +32,11 @@ const QuizzesPage = () => {
     const newQuizzesList = [...quizzes, quiz];
     setQuizzes(newQuizzesList);
 
-    localStorage.setItem('quizzes', JSON.stringify(newQuizzesList));
+    localStorage.setItem(QUIZ_LOCAL_STORAGE_KEY, JSON.stringify(newQuizzesList));
 
     setAddingQuiz(false);
     setNewQuizName('');
-  }, [newQuizName]);
+  }, [newQuizName, quizzes]);
 
   const removeQuestionFromQuiz = useCallback((quizName, questionToRemove) => {
     const editedQuizzes = quizzes.map(quiz => {
@@ -41,7 +47,7 @@ const QuizzesPage = () => {
     });
 
     setQuizzes(editedQuizzes);
-    localStorage.setItem('quizzes', JSON.stringify(editedQuizzes));
+    localStorage.setItem(QUIZ_LOCAL_STORAGE_KEY, JSON.stringify(editedQuizzes));
   }, [quizzes])
 
   return (
